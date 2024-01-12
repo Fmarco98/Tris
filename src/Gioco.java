@@ -2,7 +2,12 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 public class Gioco extends JFrame {
@@ -16,7 +21,7 @@ public class Gioco extends JFrame {
 	
 	private static Gioco self;
 	
-	public Gioco(String title) {
+	public Gioco(String title) throws MalformedURLException, IOException {
 		super(title);
 		self = this;
 		
@@ -30,10 +35,12 @@ public class Gioco extends JFrame {
 		return turno;
 	}
 	
-	private void pagina() {
+	private void pagina() throws MalformedURLException, IOException {
 		
 		//Imposto l'Immagine ico.png
-		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("./ico.png")));
+		BufferedImage icon = ImageIO.read(new URL("https://cdn.discordapp.com/attachments/786569980405612564/1195417703641514116/ico.png?ex=65b3ea7e&is=65a1757e&hm=fb431645d4ce8254d4051650d56649fc2cff6e4e9ed478d82a4496761b012dc3&"));
+		//this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("./ico.png")));
+		this.setIconImage(icon);
 		
 		this.getContentPane().setLayout(new BorderLayout());
 		
