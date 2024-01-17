@@ -14,10 +14,12 @@ public class ErrorFrame extends JFrame{
 	
 	private String errorMsg;
 	
+	//Costruttore
 	public ErrorFrame(String msg) {
 		super("Error Message");
 		this.errorMsg = msg;
 		
+		//impostazione grafica
 		this.setBounds(300, 500, 400, 150);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
@@ -30,6 +32,7 @@ public class ErrorFrame extends JFrame{
 		this.setVisible(true);
 	}
 	
+	//Funzione per impostare il pulsante di chiusura
 	private JPanel setCloseButton() {
 		JPanel p = new JPanel();
 		p.setLayout(new FlowLayout());
@@ -38,6 +41,7 @@ public class ErrorFrame extends JFrame{
 		b.setFocusable(false);
 		
 		ErrorFrame f = this;
+		//Definizione delle operazioni del pulsante
 		b.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -49,6 +53,7 @@ public class ErrorFrame extends JFrame{
 		return p;
 	}
 	
+	//Funzione per impostare la zona di lettura del messaggio
 	private JTextArea setMsgField() {
 		JTextArea txt = new JTextArea();
 		

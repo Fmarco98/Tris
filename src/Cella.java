@@ -6,6 +6,7 @@ import javax.swing.JButton;
 
 public class Cella extends JButton{
 	
+	//Costruttore
 	public Cella() {
 		super("");
 		this.setFont(Gioco.FONT);
@@ -13,6 +14,7 @@ public class Cella extends JButton{
 		this.funzione();
 	}
 	
+	//Funzione dedicata alla scrittura delle operazione del pulsante
 	private void funzione() {
 		Cella c = this;
 		
