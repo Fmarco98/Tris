@@ -1,14 +1,10 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Gioco extends JFrame {
@@ -55,9 +51,8 @@ public class Gioco extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//Imposto l'Immagine ico.png
-		//Image icon = Toolkit.getDefaultToolkit().getImage("icon/ico.png");
-		BufferedImage icon = ImageIO.read(new URL("https://cdn.discordapp.com/attachments/786569980405612564/1195417703641514116/ico.png?ex=65b3ea7e&is=65a1757e&hm=fb431645d4ce8254d4051650d56649fc2cff6e4e9ed478d82a4496761b012dc3&"));
-		this.setIconImage(icon);
+		ImageIcon icon = new ImageIcon("src/icon/ico.png");
+		this.setIconImage(icon.getImage());
 		
 		this.getContentPane().setLayout(new BorderLayout());
 		
