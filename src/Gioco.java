@@ -78,7 +78,7 @@ public class Gioco extends JFrame {
 		}
 	}
 	
-	//Metodo globale per ritornare il gioco sesso
+	//Metodo globale per ritornare il gioco sesso [hehe errore di battitura]
 	public static Gioco getIstance() {
 		return self;
 	}
